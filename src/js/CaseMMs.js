@@ -7,19 +7,21 @@ class CaseMMs extends QueueModel {
     }
 
     getL() {
-        throw Error('Not implemented');
+        return this.getLq() + this.lOverM;
     }
 
     getLq() {
-        throw Error('Not implemented');
+        const lOverMToSOverFact = this.calculatePowerFactorialDivision(this.lOverM, this.s);
+        const rhoComplement = 1 - this.getRho();
+        return this.getP0() * lOverMToSOverFact * this.getRho() / rhoComplement / rhoComplement;
     }
 
     getW() {
-        throw Error('Not implemented');
+        return this.getWq() + (1/this.mu);
     }
 
     getWq() {
-        throw Error('Not implemented');
+        return this.getLq() / this.lambda;
     }
 
     getRho() {
