@@ -7,7 +7,7 @@ class CaseMMsK extends CaseMMs {
     }
 
     getL() {
-        throw Error('Not implemented');
+        return this.getLambdaE() * this.getW();
     }
 
     getLq() {
@@ -15,11 +15,11 @@ class CaseMMsK extends CaseMMs {
     }
 
     getW() {
-        return this.getLq / getLambdaE();
+        return this.getWq() + 1 / this.mu;
     }
 
     getWq() {
-        throw Error('Not implemented');
+        return this.getLq() / this.getLambdaE();
     }
 
     rhoToKSDiff() {
@@ -30,23 +30,22 @@ class CaseMMsK extends CaseMMs {
         let sPart = 0;
         for(let n = this.s + 1; n <= this.k; n++)
             sPart += Math.pow(this.getRho(), n - this.s);
-        sPart *= this.calculatePowerFactorialDivision(this.lOverM, this.s);
+        sPart *= this.calculatePowerFactorialDivision(this.lOverM, this.s, this.s);
         let sum = 0;
         for (let n = 0; n <= this.s; n++)
-            sum += this.calculatePowerFactorialDivision(this.lOverM, n);
+            sum += this.calculatePowerFactorialDivision(this.lOverM, n, n);
         sum += sPart;
         return 1 / sum;
     }
 
     getPn(n) {
-        if(n > k)
+        if(n > this.k)
             return 0;
-        if(n <= this.s)
-            return 
+        return super.getPn(n);
     }
 
     getLambdaE() {
-
+        return this.lambda * (1 - this.getPn(this.k));
     }
 
 }
