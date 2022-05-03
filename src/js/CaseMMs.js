@@ -45,18 +45,14 @@ class CaseMMs extends QueueModel {
     }
 
     calculatePowerFactorialDivision(base, exponent, factorial) {
-        let n = Math.min(exponent, factorial);
-        let result = 1;
-        let i;
-        for(i = 1; i <= n; i++)
-            result *= base / i;
-        n = Math.max(exponent, factorial);
-        for(; i <= n; i++)
-            if(exponent > factorial)
-                result *= base;
-            else
-                result /= i;
-        return result;
+        if(exponent > 0 && factorial > 0)
+            return base / factorial * this.calculatePowerFactorialDivision(base, exponent-1, factorial-1);
+        else if(exponent > 0)
+            return base * this.calculatePowerFactorialDivision(base, exponent-1, 0);
+        else if(factorial > 0)
+            return this.calculatePowerFactorialDivision(base, 0, factorial-1) / factorial;
+        else
+            return 1;
     }
 
 }
