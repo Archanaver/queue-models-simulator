@@ -37,6 +37,13 @@ class CaseMMs extends QueueModel {
         return 1 / sum;
     }
 
+    getPn(n) {
+        if(n <= this.s)
+            return this.calculatePowerFactorialDivision(this.lOverM, n) * this.getP0()
+        else
+            return 
+    }
+
     calculatePowerFactorialDivision(base, n) {
         if(n == 0)
             return 1;

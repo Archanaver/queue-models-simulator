@@ -9,3 +9,10 @@ console.log(mms.getLq() == 1/12);
 console.log(mms.getL() == 3/4);
 console.log(mms.getWq() == 1/24);
 console.log(mms.getW() == 9/24);
+
+const mmsk = new CaseMMsK(1, 3, 2, 3);
+console.log(mmsk.getP0());
+console.log(mmsk.getLq());
+console.log(mmsk.getW());
+console.log(mmsk.getL());
+console.log(mmsk.getWq());
