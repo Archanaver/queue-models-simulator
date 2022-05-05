@@ -6,10 +6,34 @@
     <title>Queue models simulator</title>
   </head>
   <body>
+    <div class="centre">
+      <div class="main-container">
+        <div class="model-options">
+          <button id="btn-mm1">M/M/1</button>
+          <button id="btn-mms">M/M/s</button>
+          <button id="btn-mmsk">M/M/s/K</button>
+        </div>
+        <div class="inputs">
+          <form id="mm1-form">
+            <label>Lambda</label>
+            <input type="number" inputmode="numeric" class="l" value="2">
+            <label>Mu</label>
+            <input type="number" inputmode="numeric" class="m" value="3">
+          </form>
+        </div>
+        <div class="results">
+          <p id="l"></p>
+          <p id="lq"></p>
+          <p id="w"></p>
+          <p id="wq"></p>
+        </div>
+      </div>
+    </div>
     <script src="js/QueueModel.js"></script>
     <script src="js/CaseMM1.js"></script>
     <script src="js/CaseMMs.js"></script>
     <script src="js/CaseMMsK.js"></script>
     <script src="js/Test.js"></script>
+    <script src="js/Main.js"></script>
   </body>
 </html>
