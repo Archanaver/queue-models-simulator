@@ -15,7 +15,7 @@ function main() {
     prepareMMsKHandler();
     addNavFunctionality();
     hideModelInputs();
-    mmsForm.classList.remove('ocultar');
+    mm1Form.classList.remove('ocultar');
 }
 
 function prepareMM1Handler() {
