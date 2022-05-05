@@ -76,21 +76,9 @@ function prepareMMsKHandler() {
 }
 
 function addNavFunctionality() {
-    document.querySelector('#btn-mm1').addEventListener('input', (e) => {
-        hideModelInputs();
-        if(e.target.checked)
-            mm1Form.classList.remove('ocultar');    
-    });
-    document.querySelector('#btn-mms').addEventListener('input', (e) => {
-        hideModelInputs();
-        if(e.target.checked)
-            mmsForm.classList.remove('ocultar');
-    });
-    document.querySelector('#btn-mmsk').addEventListener('input', (e) => {
-        hideModelInputs();
-        if(e.target.checked)
-            mmskForm.classList.remove('ocultar');
-    });
+    document.querySelector('#btn-mm1').addEventListener('input', (e) => showModelInputs(e, mm1Form));
+    document.querySelector('#btn-mms').addEventListener('input', (e) => showModelInputs(e, mmsForm));
+    document.querySelector('#btn-mmsk').addEventListener('input', (e) => showModelInputs(e, mmskForm));
 }
 
 function hideModelInputs() {
@@ -108,4 +96,10 @@ function updateAnswers(queueModel) {
     lqText.innerText = `Lq = ${queueModel.getLq()}`;
     wText.innerText = `W = ${queueModel.getW()}`;
     wqText.innerText = `Wq = ${queueModel.getWq()}`;
+}
+
+function showModelInputs(e, modelForm) {
+    hideModelInputs();
+    if(e.target.checked)
+        modelForm.classList.remove('ocultar');
 }
