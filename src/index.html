@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
     <title>Queue models simulator</title>
   </head>
   <body>
     <div class="centre">
       <div class="main-container">
         <div class="model-options">
-          <button id="btn-mm1">M/M/1</button>
-          <button id="btn-mms">M/M/s</button>
-          <button id="btn-mmsk">M/M/s/K</button>
+          <label><input type="radio" name="model" id="btn-mm1" class="oculr" checked>M/M/1</label>
+          <label><input type="radio" name="model" id="btn-mms" class="oculr">M/M/s</label>
+          <label><input type="radio" name="model" id="btn-mmsk" class="oculr">M/M/s/K</label>
         </div>
         <div class="inputs">
           <form id="mm1-form">

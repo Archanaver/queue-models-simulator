@@ -2,6 +2,10 @@ const mm1 = new CaseMM1(3, 2);
 const mms = new CaseMMs(2, 3, 2);
 const mmsk = new CaseMMsK(1, 3, 2, 3);
 
+const mm1Form = document.getElementById('mm1-form');
+const mmsForm = document.getElementById('mms-form');
+const mmskForm = document.getElementById('mmsk-form');
+
 main();
 test();
 
@@ -9,6 +13,9 @@ function main() {
     prepareMM1Handler();
     prepareMMsHandler();
     prepareMMsKHandler();
+    addNavFunctionality();
+    hideModelInputs();
+    mmsForm.classList.remove('ocultar');
 }
 
 function prepareMM1Handler() {
@@ -66,6 +73,30 @@ function prepareMMsKHandler() {
         model.k = Number(e.target.value);
         updateAnswers(model);
     });
+}
+
+function addNavFunctionality() {
+    document.querySelector('#btn-mm1').addEventListener('input', (e) => {
+        hideModelInputs();
+        if(e.target.checked)
+            mm1Form.classList.remove('ocultar');    
+    });
+    document.querySelector('#btn-mms').addEventListener('input', (e) => {
+        hideModelInputs();
+        if(e.target.checked)
+            mmsForm.classList.remove('ocultar');
+    });
+    document.querySelector('#btn-mmsk').addEventListener('input', (e) => {
+        hideModelInputs();
+        if(e.target.checked)
+            mmskForm.classList.remove('ocultar');
+    });
+}
+
+function hideModelInputs() {
+    mm1Form.classList.add('ocultar');
+    mmsForm.classList.add('ocultar');
+    mmskForm.classList.add('ocultar');
 }
 
 function updateAnswers(queueModel) {
