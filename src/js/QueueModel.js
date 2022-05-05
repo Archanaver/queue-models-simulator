@@ -25,4 +25,12 @@ class QueueModel {
         throw Error('Not implemented');
     }
 
+    getP0() {
+        throw Error('Not implemented');
+    }
+
+    getRho() {
+        throw Error('Not implemented');
+    }
+
 }

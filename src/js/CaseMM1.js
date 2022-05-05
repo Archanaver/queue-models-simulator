@@ -20,4 +20,12 @@ class CaseMM1 extends QueueModel {
     getWq() {
         return this.getL() / this.mu;
     }
+
+    getP0() {
+        return 1 - this.getRho();
+    }
+
+    getRho() {
+        return this.lambda / this.mu;
+    }
 }
