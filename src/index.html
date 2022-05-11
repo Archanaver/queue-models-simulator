@@ -5,47 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos-interfaz.css">
     <title>Queue models simulator</title>
   </head>
   <body>
     <div class="centre">
       <div class="main-container">
-        <div class="model-options">
-          <label><input type="radio" name="model" id="btn-mm1" class="oculr" checked>M/M/1</label>
-          <label><input type="radio" name="model" id="btn-mms" class="oculr">M/M/s</label>
-          <label><input type="radio" name="model" id="btn-mmsk" class="oculr">M/M/s/K</label>
+        <div class="model-options flexbox">
+          <input type="radio" name="model" id="btn-mm1" class="ocultar" checked>
+          <label for="btn-mm1">M/M/1</label>
+          <input type="radio" name="model" id="btn-mms" class="ocultar">
+          <label for="btn-mms">M/M/s</label>
+          <input type="radio" name="model" id="btn-mmsk" class="ocultar">
+          <label for="btn-mmsk">M/M/s/K</label>
         </div>
-        <div class="inputs">
-          <form id="mm1-form">
-            <label>Lambda</label>
-            <input type="number" inputmode="numeric" class="l" value="2">
-            <label>Mu</label>
-            <input type="number" inputmode="numeric" class="m" value="3">
-          </form>
-          <form id="mms-form">
-            <label>Lambda</label>
-            <input type="number" inputmode="numeric" class="l" value="2">
-            <label>Mu</label>
-            <input type="number" inputmode="numeric" class="m" value="3">
-            <label>s</label>
-            <input type="number" inputmode="numeric" class="s" value="2">
-          </form>
-          <form id="mmsk-form">
-            <label>Lambda</label>
-            <input type="number" inputmode="numeric" class="l" value="2">
-            <label>Mu</label>
-            <input type="number" inputmode="numeric" class="m" value="3">
-            <label>s</label>
-            <input type="number" inputmode="numeric" class="s" value="1">
-            <label>K</label>
-            <input type="number" inputmode="numeric" class="k" value="3">
-          </form>
-        </div>
-        <div class="results">
-          <p id="l"></p>
-          <p id="lq"></p>
-          <p id="w"></p>
-          <p id="wq"></p>
+        <div class="app-interface">
+          <div class="inputs">
+            <form id="mm1-form">
+              <label>Lambda</label>
+              <input type="number" inputmode="numeric" class="l" value="2">
+              <label>Mu</label>
+              <input type="number" inputmode="numeric" class="m" value="3">
+            </form>
+            <form id="mms-form">
+              <label>Lambda</label>
+              <input type="number" inputmode="numeric" class="l" value="2">
+              <label>Mu</label>
+              <input type="number" inputmode="numeric" class="m" value="3">
+              <label>s</label>
+              <input type="number" inputmode="numeric" class="s" value="2">
+            </form>
+            <form id="mmsk-form">
+              <label>Lambda</label>
+              <input type="number" inputmode="numeric" class="l" value="2">
+              <label>Mu</label>
+              <input type="number" inputmode="numeric" class="m" value="3">
+              <label>s</label>
+              <input type="number" inputmode="numeric" class="s" value="1">
+              <label>K</label>
+              <input type="number" inputmode="numeric" class="k" value="3">
+            </form>
+          </div>
+          <div class="results">
+            <p id="l"></p>
+            <p id="lq"></p>
+            <p id="w"></p>
+            <p id="wq"></p>
+          </div>
         </div>
       </div>
     </div>
