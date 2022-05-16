@@ -48,4 +48,8 @@ class CaseMMsK extends CaseMMs {
         return this.lambda * (1 - this.getPn(this.k));
     }
 
+    getCost(Cs, Cw){
+        return this.getLq()*Cw + (this.s*Cs);
+    }
+
 }

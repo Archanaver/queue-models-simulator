@@ -33,4 +33,8 @@ class QueueModel {
         throw Error('Not implemented');
     }
 
+    getCost() {
+        throw Error('Not implemented');
+    }
+
 }
