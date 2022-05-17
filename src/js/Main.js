@@ -16,6 +16,7 @@ function main() {
     addNavFunctionality();
     hideModelInputs();
     mm1Form.classList.remove('ocultar');
+    updateAnswers(mm1)
 }
 
 function prepareMM1Handler() {
