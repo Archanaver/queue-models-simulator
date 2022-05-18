@@ -55,8 +55,4 @@ class CaseMMs extends QueueModel {
             return 1;
     }
 
-    getCost(Cs, Cw){
-        return this.getLq()*Cw + (this.s*Cs);
-    }
-
 }
