@@ -24,4 +24,11 @@ function test() {
     console.log(mmsk.getL());
     console.log(mmsk.getPn(mmsk.k + 1));
     // console.log(mmsk.getCost(12, 15));
+
+    const mg1 = new CaseMG1(5, 3, 0.1);
+    console.log(mg1.getRho());
+    console.log(mg1.getLq());
+    console.log(mg1.getL());
+    console.log(mg1.getWq());
+    console.log(mg1.getW());
 }
