@@ -32,7 +32,7 @@ class QueueModel {
     }
 
     getRho() {
-        throw Error('Not implemented');
+        return this.lambda / this.mu / this.s;
     }
 
     getCost(){

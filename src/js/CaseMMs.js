@@ -24,10 +24,6 @@ class CaseMMs extends QueueModel {
         return this.getLq() / this.lambda;
     }
 
-    getRho() {
-        return this.lOverM / this.s;
-    }
-
     getP0() {
         const sPart = this.calculatePowerFactorialDivision(this.lOverM, this.s, this.s) * 1 / (1 - this.lOverM / this.s);
         let sum = 0;

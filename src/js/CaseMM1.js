@@ -25,8 +25,4 @@ class CaseMM1 extends QueueModel {
         return 1 - this.getRho();
     }
 
-    getRho() {
-        return this.lambda / this.mu;
-    }
-
 }
