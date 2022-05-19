@@ -29,8 +29,4 @@ class CaseMM1 extends QueueModel {
         return this.lambda / this.mu;
     }
 
-    getCost(Cs, Cw){
-        return this.getLq()*Cw + (1*Cs);
-    }
-
 }

@@ -1,6 +1,9 @@
+const SIGNIFICANT_FIGURES = 5;
 const mm1 = new CaseMM1(3, 2);
 const mms = new CaseMMs(2, 3, 2);
 const mmsk = new CaseMMsK(1, 3, 2, 3);
+mm1.cs = 12;
+mm1.cw = 15;
 
 const mm1Form = document.getElementById('mm1-form');
 const mmsForm = document.getElementById('mms-form');
@@ -23,12 +26,22 @@ function prepareMM1Handler() {
     const model = mm1;
     const lambdaVal = document.querySelector('#mm1-form .l');
     const muVal = document.querySelector('#mm1-form .m');
+    const cw = document.querySelector('#mm1-form .cw');
+    const cs = document.querySelector('#mm1-form .cs');
     lambdaVal.addEventListener('input', (e) => {
         model.lambda = Number(e.target.value);
         updateAnswers(model);
     });
     muVal.addEventListener('input', (e) => {
         model.mu = Number(e.target.value);
+        updateAnswers(model);
+    });
+    cw.addEventListener('input', (e) => {
+        model.cw = Number(e.target.value);
+        updateAnswers(model);
+    });
+    cs.addEventListener('input', (e) => {
+        model.cs = Number(e.target.value);
         updateAnswers(model);
     });
 }
@@ -38,6 +51,8 @@ function prepareMMsHandler() {
     const lambdaVal = document.querySelector('#mms-form .l');
     const muVal = document.querySelector('#mms-form .m');
     const sVal = document.querySelector('#mms-form .s');
+    const cw = document.querySelector('#mms-form .cw');
+    const cs = document.querySelector('#mms-form .cs');
     lambdaVal.addEventListener('input', (e) => {
         model.lambda = Number(e.target.value);
         updateAnswers(model);
@@ -50,6 +65,14 @@ function prepareMMsHandler() {
         model.s = Number(e.target.value);
         updateAnswers(model);
     });
+    cw.addEventListener('input', (e) => {
+        model.cw = Number(e.target.value);
+        updateAnswers(model);
+    });
+    cs.addEventListener('input', (e) => {
+        model.cs = Number(e.target.value);
+        updateAnswers(model);
+    });
 }
 
 function prepareMMsKHandler() {
@@ -58,6 +81,8 @@ function prepareMMsKHandler() {
     const muVal = document.querySelector('#mmsk-form .m');
     const sVal = document.querySelector('#mmsk-form .s');
     const kVal = document.querySelector('#mmsk-form .k');
+    const cw = document.querySelector('#mmsk-form .cw');
+    const cs = document.querySelector('#mmsk-form .cs');
     lambdaVal.addEventListener('input', (e) => {
         model.lambda = Number(e.target.value);
         updateAnswers(model);
@@ -72,6 +97,14 @@ function prepareMMsKHandler() {
     });
     kVal.addEventListener('input', (e) => {
         model.k = Number(e.target.value);
+        updateAnswers(model);
+    });
+    cw.addEventListener('input', (e) => {
+        model.cw = Number(e.target.value);
+        updateAnswers(model);
+    });
+    cs.addEventListener('input', (e) => {
+        model.cs = Number(e.target.value);
         updateAnswers(model);
     });
 }
@@ -93,10 +126,12 @@ function updateAnswers(queueModel) {
     const lqText = document.getElementById('lq');
     const wText = document.getElementById('w');
     const wqText = document.getElementById('wq');
-    lText.innerText = `L = ${queueModel.getL()}`;
-    lqText.innerText = `Lq = ${queueModel.getLq()}`;
-    wText.innerText = `W = ${queueModel.getW()}`;
-    wqText.innerText = `Wq = ${queueModel.getWq()}`;
+    const ctText = document.getElementById('ct');
+    lText.innerText = `L = ${queueModel.getL().toFixed(SIGNIFICANT_FIGURES)}`;
+    lqText.innerText = `Lq = ${queueModel.getLq().toFixed(SIGNIFICANT_FIGURES)}`;
+    wText.innerText = `W = ${queueModel.getW().toFixed(SIGNIFICANT_FIGURES)}`;
+    wqText.innerText = `Wq = ${queueModel.getWq().toFixed(SIGNIFICANT_FIGURES)}`;
+    ctText.innerText = `Ct = ${queueModel.getCost().toFixed(SIGNIFICANT_FIGURES)}`;
 }
 
 function showModelInputs(e, modelForm) {

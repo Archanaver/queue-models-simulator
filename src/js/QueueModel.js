@@ -1,8 +1,10 @@
 class QueueModel {
+    cs;
+    cw;
     lambda;
     mu;
     s;
-
+    
     constructor(s, mu, lambda) {
         this.s = s;
         this.mu = mu;
@@ -33,8 +35,8 @@ class QueueModel {
         throw Error('Not implemented');
     }
 
-    getCost() {
-        throw Error('Not implemented');
+    getCost(){
+        return this.getLq() * this.cw + this.s * this.cs;
     }
 
 }
