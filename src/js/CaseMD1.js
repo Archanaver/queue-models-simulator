@@ -12,11 +12,11 @@ class CaseMD1 extends CaseMM1 {
     }
 
     getW() {
-        return this.getLq() / this.lambda;
+        return this.getWq() + 1 / this.mu;
     }
 
     getWq() {
-        return this.getWq() + 1 / this.mu;
+        return this.getLq() / this.lambda;
     }
 
 }
