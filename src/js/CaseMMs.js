@@ -3,7 +3,17 @@ class CaseMMs extends QueueModel {
 
     constructor(s, m, l) {
         super(s, m, l);
-        this.lOverM = this.lambda / this.mu;
+        this.setLOverM();
+    }
+
+    setLambda(lambda) {
+        this.lambda = lambda;
+        this.setLOverM();
+    }
+
+    setMu(mu) {
+        this.mu = mu;
+        this.setLOverM();
     }
 
     getL() {
@@ -25,9 +35,9 @@ class CaseMMs extends QueueModel {
     }
 
     getP0() {
-        const sPart = this.calculatePowerFactorialDivision(this.lOverM, this.s, this.s) * 1 / (1 - this.lOverM / this.s);
+        const sPart = this.calculatePowerFactorialDivision(this.lOverM, this.s, this.s) * 1 / (1 - this.getRho());
         let sum = 0;
-        for (let n = 0; n <= this.s - 1; n++)
+        for (let n = 0; n < this.s; n++)
             sum += this.calculatePowerFactorialDivision(this.lOverM, n, n);
         sum += sPart;
         return 1 / sum;
@@ -38,6 +48,10 @@ class CaseMMs extends QueueModel {
             return this.calculatePowerFactorialDivision(this.lOverM, n, n) * this.getP0();
         else
             return this.calculatePowerFactorialDivision(this.lOverM, n, this.s) / Math.pow(this.s, n - this.s) * this.getP0();
+    }
+
+    setLOverM() {
+        this.lOverM = this.lambda / this.mu;
     }
 
     calculatePowerFactorialDivision(base, exponent, factorialDivisor) {

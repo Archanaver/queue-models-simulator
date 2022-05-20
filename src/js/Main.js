@@ -54,11 +54,11 @@ function prepareMMsHandler() {
     const cw = document.querySelector('#mms-form .cw');
     const cs = document.querySelector('#mms-form .cs');
     lambdaVal.addEventListener('input', (e) => {
-        model.lambda = Number(e.target.value);
+        model.setLambda(Number(e.target.value));
         updateAnswers(model);
     });
     muVal.addEventListener('input', (e) => {
-        model.mu = Number(e.target.value);
+        model.setMu(Number(e.target.value));
         updateAnswers(model);
     });
     sVal.addEventListener('input', (e) => {
@@ -84,11 +84,11 @@ function prepareMMsKHandler() {
     const cw = document.querySelector('#mmsk-form .cw');
     const cs = document.querySelector('#mmsk-form .cs');
     lambdaVal.addEventListener('input', (e) => {
-        model.lambda = Number(e.target.value);
+        model.setLambda(Number(e.target.value));
         updateAnswers(model);
     });
     muVal.addEventListener('input', (e) => {
-        model.mu = Number(e.target.value);
+        model.setMu(Number(e.target.value));
         updateAnswers(model);
     });
     sVal.addEventListener('input', (e) => {
