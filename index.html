@@ -18,14 +18,32 @@
           <label for="btn-mms">M/M/s</label>
           <input type="radio" name="model" id="btn-mmsk" class="ocultar">
           <label for="btn-mmsk">M/M/s/K</label>
+          <input type="radio" name="model" id="btn-mg1" class="ocultar">
+          <label for="btn-mg1">M/G/1</label>
+          <input type="radio" name="model" id="btn-md1" class="ocultar">
+          <label for="btn-md1">M/D/1</label>
+          <input type="radio" name="model" id="btn-me1" class="ocultar">
+          <label for="btn-me1">M/E/1</label>
         </div>
         <div class="app-interface">
           <div class="inputs">
             <form id="mm1-form">
               <label>Lambda</label>
               <input type="number" inputmode="numeric" class="l" value="2">
+              <select class="l-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
               <label>Mu</label>
               <input type="number" inputmode="numeric" class="m" value="3">
+              <select class="m-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
               <label>Cw</label>
               <input type="number" inputmode="numeric" class="cw" value="12">
               <label>Cs</label>
@@ -34,8 +52,20 @@
             <form id="mms-form">
               <label>Lambda</label>
               <input type="number" inputmode="numeric" class="l" value="2">
+              <select class="l-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
               <label>Mu</label>
               <input type="number" inputmode="numeric" class="m" value="3">
+              <select class="m-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
               <label>s</label>
               <input type="number" inputmode="numeric" class="s" value="2">
               <label>Cw</label>
@@ -46,8 +76,20 @@
             <form id="mmsk-form">
               <label>Lambda</label>
               <input type="number" inputmode="numeric" class="l" value="2">
+              <select class="l-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
               <label>Mu</label>
               <input type="number" inputmode="numeric" class="m" value="3">
+              <select class="m-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
               <label>s</label>
               <input type="number" inputmode="numeric" class="s" value="1">
               <label>K</label>
@@ -56,6 +98,76 @@
               <input type="number" inputmode="numeric" class="cw" value="15">
               <label>Cs</label>
               <input type="number" inputmode="numeric" class="cs" value="12">
+            </form>
+            <form id="mg1-form">
+              <label>Lambda</label>
+              <input type="number" inputmode="numeric" class="l" value="3">
+              <select class="l-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
+              <label>Mu</label>
+              <input type="number" inputmode="numeric" class="m" value="5">
+              <select class="m-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
+              <label>Sigma</label>
+              <input type="number" inputmode="numeric" class="sigma" value="0.1">
+              <label>Cw</label>
+              <input type="number" inputmode="numeric" class="cw" value="12">
+              <label>Cs</label>
+              <input type="number" inputmode="numeric" class="cs" value="15">
+            </form>
+            <form id="md1-form">
+              <label>Lambda</label>
+              <input type="number" inputmode="numeric" class="l" value="3">
+              <select class="l-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
+              <label>Mu</label>
+              <input type="number" inputmode="numeric" class="m" value="5">
+              <select class="m-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
+              <label>Cw</label>
+              <input type="number" inputmode="numeric" class="cw" value="12">
+              <label>Cs</label>
+              <input type="number" inputmode="numeric" class="cs" value="15">
+            </form>
+            <form id="me1-form">
+              <label>Lambda</label>
+              <input type="number" inputmode="numeric" class="l" value="3">
+              <select class="l-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
+              <label>Mu</label>
+              <input type="number" inputmode="numeric" class="m" value="5">
+              <select class="m-unit">
+                <option value="hr">hr</option>
+                <option value="sec">sec</option>
+                <option value="min">min</option>
+                <option value="day">day</option>
+              </select>
+              <label>k</label>
+              <input type="number" inputmode="numeric" class="k" value="4">
+              <label>Cw</label>
+              <input type="number" inputmode="numeric" class="cw" value="12">
+              <label>Cs</label>
+              <input type="number" inputmode="numeric" class="cs" value="15">
             </form>
           </div>
           <div class="results">
@@ -73,6 +185,8 @@
     <script src="src/js/CaseMMs.js"></script>
     <script src="src/js/CaseMMsK.js"></script>
     <script src="src/js/CaseMG1.js"></script>
+    <script src="src/js/CaseME1.js"></script>
+    <script src="src/js/CaseMD1.js"></script>
     <script src="src/js/Test.js"></script>
     <script src="src/js/Main.js"></script>
   </body>
