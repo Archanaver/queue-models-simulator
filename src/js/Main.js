@@ -2,8 +2,12 @@ const SIGNIFICANT_FIGURES = 5;
 const mm1 = new CaseMM1(3, 2);
 const mms = new CaseMMs(2, 3, 2);
 const mmsk = new CaseMMsK(1, 3, 2, 3);
-mm1.cs = 12;
-mm1.cw = 15;
+mm1.cw = 12;
+mm1.cs = 15;
+mms.cw = 12;
+mms.cs = 15;
+mmsk.cw = 12;
+mmsk.cs = 15;
 
 const mm1Form = document.getElementById('mm1-form');
 const mmsForm = document.getElementById('mms-form');

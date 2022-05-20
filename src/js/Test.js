@@ -7,6 +7,10 @@ function test() {
     mm1.cw = 15;
     mm1.cs = 12;
     console.log(mm1.getCost() == 32);
+    mm1.cs = 11;
+    mm1.getCost()
+    mm1.cs = 12;
+    console.log(mm1.getCost() == 32);
 
     const mms = new CaseMMs(2, 3, 2);
     console.log(mms.getLq() == 1/12);
