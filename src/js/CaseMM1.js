@@ -1,5 +1,4 @@
 class CaseMM1 extends QueueModel {
-    n;
 
     constructor(m, l) {
         super(1, m, l);
@@ -19,6 +18,10 @@ class CaseMM1 extends QueueModel {
 
     getWq() {
         return this.getL() / this.mu;
+    }
+
+    getPn(n) {
+        return this.getRho();
     }
 
     getP0() {

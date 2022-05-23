@@ -4,6 +4,7 @@ class QueueModel {
     lambda;
     mu;
     s;
+    n;
     
     constructor(s, mu, lambda) {
         this.s = s;
@@ -33,6 +34,10 @@ class QueueModel {
 
     getRho() {
         return this.lambda / this.mu / this.s;
+    }
+
+    getPn(n) {
+        throw Error('Not implemented');
     }
 
     getCost(){
