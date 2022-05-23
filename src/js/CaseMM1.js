@@ -21,7 +21,7 @@ class CaseMM1 extends QueueModel {
     }
 
     getPn(n) {
-        return this.getRho();
+        return Math.pow(this.getRho(), n) * (1 - this.getRho());
     }
 
     getP0() {
