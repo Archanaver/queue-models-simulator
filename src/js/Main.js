@@ -358,14 +358,18 @@ function updateAnswers(queueModel) {
     const p0Text = document.getElementById('p0');
     const pnText = document.getElementById('pn');
     const leText = document.getElementById('le');
-    lText.innerText = `L = ${queueModel.getL().toFixed(SIGNIFICANT_FIGURES)}`;
-    lqText.innerText = `Lq = ${queueModel.getLq().toFixed(SIGNIFICANT_FIGURES)}`;
-    wText.innerText = `W = ${queueModel.getW().toFixed(SIGNIFICANT_FIGURES)}`;
-    wqText.innerText = `Wq = ${queueModel.getWq().toFixed(SIGNIFICANT_FIGURES)}`;
-    rhoText.innerText = `Rho = ${queueModel.getRho().toFixed(SIGNIFICANT_FIGURES)}`;
-    p0Text.innerText = `P0 = ${queueModel.getP0().toFixed(SIGNIFICANT_FIGURES)}`;
-    ctText.innerText = `Ct = ${queueModel.getCost().toFixed(SIGNIFICANT_FIGURES)}`;
-    pnText.innerText = `P${queueModel.n} = ${queueModel.getPn(queueModel.n).toFixed(SIGNIFICANT_FIGURES)}`;
+    lText.innerHTML = `<b>L =</b> ${queueModel.getL().toFixed(SIGNIFICANT_FIGURES)}`;
+    lqText.innerHTML = `<b>Lq =</b> ${queueModel.getLq().toFixed(SIGNIFICANT_FIGURES)}`;
+    wText.innerHTML = `<b>W =</b> ${queueModel.getW().toFixed(SIGNIFICANT_FIGURES)}`;
+    wqText.innerHTML = `<b>Wq =</b> ${queueModel.getWq().toFixed(SIGNIFICANT_FIGURES)}`;
+    rhoText.innerHTML = `<b>Rho =</b> ${queueModel.getRho().toFixed(SIGNIFICANT_FIGURES)}`;
+    p0Text.innerHTML = `<b>P0 =</b> ${queueModel.getP0().toFixed(SIGNIFICANT_FIGURES)}`;
+    ctText.innerHTML = `<b>Ct =</b> ${queueModel.getCost().toFixed(SIGNIFICANT_FIGURES)}`;
+    pnText.innerHTML = `<b>P${queueModel.n} =</b> ${queueModel.getPn(queueModel.n).toFixed(SIGNIFICANT_FIGURES)}`;
+    if(queueModel != mmsk)
+        leText.classList.add('ocultar');
+    else
+        leText.classList.remove('ocultar');
     leText.innerText = queueModel == mmsk ? `Tasa efectiva de arrivo = ${queueModel.getLambdaE().toFixed(SIGNIFICANT_FIGURES)}`: '';
 }
 

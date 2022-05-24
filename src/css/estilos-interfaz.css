@@ -17,7 +17,7 @@
     padding: 0.1rem 0.5rem;
 }
 
-.model-options input:checked + label {
+.model-options input:checked + label, .model-options label:hover {
     background-color: var(--rojo);
 }
 
@@ -31,4 +31,19 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 1rem;
+}
+
+/*********************
+*                    *
+*       results      *
+*                    *
+**********************/
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.results b {
+    font-weight: 400;
 }
