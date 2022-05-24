@@ -30,8 +30,4 @@ class CaseMG1 extends QueueModel {
         return Math.pow(this.getRho(), n) * this.getP0();
     }
 
-    getCost(){
-        return this.getLq() * this.cw + this.s * this.cs;
-    }
-
 }
