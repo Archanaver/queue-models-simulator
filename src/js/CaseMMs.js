@@ -55,7 +55,9 @@ class CaseMMs extends QueueModel {
     }
 
     calculatePowerFactorialDivision(base, exponent, factorialDivisor) {
-        if(exponent > 0 && factorialDivisor > 0)
+        if(factorialDivisor > 59)
+            return 0;
+        else if(exponent > 0 && factorialDivisor > 0)
             return base / factorialDivisor * this.calculatePowerFactorialDivision(base, exponent-1, factorialDivisor-1);
         else if(exponent > 0)
             return base * this.calculatePowerFactorialDivision(base, exponent-1, 0);
