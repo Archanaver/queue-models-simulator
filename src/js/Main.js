@@ -37,6 +37,7 @@ main();
 test();
 
 function main() {
+    addCostUnitSelectors();
     prepareMM1Handler();
     prepareMMsHandler();
     prepareMMsKHandler();
@@ -50,6 +51,21 @@ function main() {
     hideError();
 }
 
+function addCostUnitSelectors() {
+    Array('select.cw-units', 'select.cs-units').forEach(cssSelector => {
+        document.querySelectorAll(cssSelector).forEach(select => {
+            const currency = ['MXN', 'USD', 'Valorant Points'];
+            const currencyConversions = [1, 19.85, 99/550];
+            for (let i = 0; i < currency.length; i++) {
+                const option = document.createElement('option');
+                option.value = currencyConversions[i];
+                option.innerText = currency[i];
+                select.appendChild(option)
+            }
+        });
+    })
+}
+
 function prepareMM1Handler() {
     const model = mm1;
     const lambdaVal = document.querySelector('#mm1-form .l');
@@ -59,6 +75,8 @@ function prepareMM1Handler() {
     const lUnit = document.querySelector('#mm1-form .l-unit');
     const mUnit = document.querySelector('#mm1-form .m-unit');
     const nVal = document.querySelector('#mm1-form .n');
+    const cwCurrency = document.querySelector('#mm1-form .cw-units');
+    const csCurrency = document.querySelector('#mm1-form .cs-units');
     lambdaVal.addEventListener('input', (e) => {
         try {
             hideError();
@@ -80,11 +98,23 @@ function prepareMM1Handler() {
         }
     });
     cw.addEventListener('input', (e) => {
-        model.cw = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * cwCurrency.value;
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
-        model.cs = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * csCurrency.value;
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    csCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cs.value);
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    cwCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cw.value);
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     lUnit.addEventListener('change', (e) => {
@@ -113,6 +143,8 @@ function prepareMMsHandler() {
     const lUnit = document.querySelector('#mms-form .l-unit');
     const mUnit = document.querySelector('#mms-form .m-unit');
     const nVal = document.querySelector('#mms-form .n');
+    const cwCurrency = document.querySelector('#mms-form .cw-units');
+    const csCurrency = document.querySelector('#mms-form .cs-units');
     lambdaVal.addEventListener('input', (e) => {
         try {
             hideError();
@@ -138,11 +170,23 @@ function prepareMMsHandler() {
         updateAnswers(model);
     });
     cw.addEventListener('input', (e) => {
-        model.cw = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * cwCurrency.value;
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
-        model.cs = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * csCurrency.value;
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    csCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cs.value);
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    cwCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cw.value);
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     lUnit.addEventListener('change', (e) => {
@@ -172,6 +216,8 @@ function prepareMMsKHandler() {
     const lUnit = document.querySelector('#mmsk-form .l-unit');
     const mUnit = document.querySelector('#mmsk-form .m-unit');
     const nVal = document.querySelector('#mmsk-form .n');
+    const cwCurrency = document.querySelector('#mmsk-form .cw-units');
+    const csCurrency = document.querySelector('#mmsk-form .cs-units');
     lambdaVal.addEventListener('input', (e) => {
         try {
             hideError();
@@ -211,11 +257,23 @@ function prepareMMsKHandler() {
         }
     });
     cw.addEventListener('input', (e) => {
-        model.cw = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * cwCurrency.value;
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
-        model.cs = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * csCurrency.value;
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    csCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cs.value);
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    cwCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cw.value);
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     lUnit.addEventListener('change', (e) => {
@@ -244,6 +302,8 @@ function prepareMG1Handler() {
     const lUnit = document.querySelector('#mg1-form .l-unit');
     const mUnit = document.querySelector('#mg1-form .m-unit');
     const nVal = document.querySelector('#mg1-form .n');
+    const cwCurrency = document.querySelector('#mg1-form .cw-units');
+    const csCurrency = document.querySelector('#mg1-form .cs-units');
     lambdaVal.addEventListener('input', (e) => {
         try {
             hideError();
@@ -269,11 +329,23 @@ function prepareMG1Handler() {
         updateAnswers(model);
     });
     cw.addEventListener('input', (e) => {
-        model.cw = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * cwCurrency.value;
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
-        model.cs = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * csCurrency.value;
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    csCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cs.value);
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    cwCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cw.value);
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     lUnit.addEventListener('change', (e) => {
@@ -301,6 +373,8 @@ function prepareMD1Handler() {
     const lUnit = document.querySelector('#md1-form .l-unit');
     const mUnit = document.querySelector('#md1-form .m-unit');
     const nVal = document.querySelector('#md1-form .n');
+    const cwCurrency = document.querySelector('#md1-form .cw-units');
+    const csCurrency = document.querySelector('#md1-form .cs-units');
     lambdaVal.addEventListener('input', (e) => {
         try {
             hideError();
@@ -322,15 +396,23 @@ function prepareMD1Handler() {
         }
     });
     cw.addEventListener('input', (e) => {
-        ee[1] = e.target.value == 83;
-        toggleEasterEgg();
-        model.cw = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * cwCurrency.value;
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
-        ee[2] = e.target.value == 71;
-        toggleEasterEgg();
-        model.cs = Number(e.target.value);
+        const convertedValue = Number(e.target.value) * csCurrency.value;
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    csCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cs.value);
+        model.cs = convertedValue;
+        updateAnswers(model);
+    });
+    cwCurrency.addEventListener('change', (e) => {
+        const convertedValue = e.target.value * Number(cw.value);
+        model.cw = convertedValue;
         updateAnswers(model);
     });
     lUnit.addEventListener('change', (e) => {
@@ -361,6 +443,8 @@ function prepareME1Handler() {
     const lUnit = document.querySelector('#me1-form .l-unit');
     const mUnit = document.querySelector('#me1-form .m-unit');
     const nVal = document.querySelector('#me1-form .n');
+    const cwCurrency = document.querySelector('#me1-form .cw-units');
+    const csCurrency = document.querySelector('#me1-form .cs-units');
     lambdaVal.addEventListener('input', (e) => {
         try {
             hideError();
@@ -391,6 +475,16 @@ function prepareME1Handler() {
     });
     cs.addEventListener('input', (e) => {
         model.cs = Number(e.target.value);
+        updateAnswers(model);
+    });
+    cw.addEventListener('input', (e) => {
+        const convertedValue = Number(e.target.value) * cwCurrency.value;
+        model.cw = convertedValue;
+        updateAnswers(model);
+    });
+    cs.addEventListener('input', (e) => {
+        const convertedValue = Number(e.target.value) * csCurrency.value;
+        model.cs = convertedValue;
         updateAnswers(model);
     });
     lUnit.addEventListener('change', (e) => {
@@ -439,11 +533,11 @@ function updateAnswers(queueModel) {
     const leText = document.getElementById('le');
     lText.innerHTML = `<b>L =</b> ${queueModel.getL().toFixed(SIGNIFICANT_FIGURES)}`;
     lqText.innerHTML = `<b>Lq =</b> ${queueModel.getLq().toFixed(SIGNIFICANT_FIGURES)}`;
-    wText.innerHTML = `<b>W =</b> ${queueModel.getW().toFixed(SIGNIFICANT_FIGURES)}`;
-    wqText.innerHTML = `<b>Wq =</b> ${queueModel.getWq().toFixed(SIGNIFICANT_FIGURES)}`;
+    wText.innerHTML = `<b>W =</b> ${queueModel.getW().toFixed(SIGNIFICANT_FIGURES)} horas`;
+    wqText.innerHTML = `<b>Wq =</b> ${queueModel.getWq().toFixed(SIGNIFICANT_FIGURES)} horas`;
     rhoText.innerHTML = `<b>Rho =</b> ${queueModel.getRho().toFixed(SIGNIFICANT_FIGURES)}`;
     p0Text.innerHTML = `<b>P0 =</b> ${queueModel.getP0().toFixed(SIGNIFICANT_FIGURES)}`;
-    ctText.innerHTML = `<b>Ct =</b> ${queueModel.getCost().toFixed(SIGNIFICANT_FIGURES)}`;
+    ctText.innerHTML = `<b>Ct =</b> ${queueModel.getCost().toFixed(SIGNIFICANT_FIGURES)} MXN`;
     pnText.innerHTML = `<b>P${queueModel.n} =</b> ${queueModel.getPn(queueModel.n).toFixed(SIGNIFICANT_FIGURES)}`;
     if(queueModel != mmsk)
         leText.classList.add('ocultar');
