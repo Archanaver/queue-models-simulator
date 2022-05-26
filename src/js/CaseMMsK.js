@@ -1,9 +1,25 @@
 class CaseMMsK extends CaseMMs {
-    k;
+    _k;
 
     constructor(s, m, l, k) {
         super(s, m, l);
         this.k = k;
+    }
+
+    get k() {
+        return this._k;
+    }
+
+    set k(newK) {
+        if(newK < this.s)
+            throw new Error('No debe de haber más servidores que el límite de usuarios en el sistema');
+        this._k = newK;
+    }
+
+    setS(s) {
+        if(this.k < s)
+            throw new Error('No debe de haber más servidores que el límite de usuarios en el sistema');
+        this.s = s;
     }
 
     getL() {
