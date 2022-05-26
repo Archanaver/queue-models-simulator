@@ -31,6 +31,8 @@ const mg1Form = document.getElementById('mg1-form');
 const md1Form = document.getElementById('md1-form');
 const me1Form = document.getElementById('me1-form');
 
+const errorWindow = document.querySelector('.error-container h2');
+
 main();
 test();
 
@@ -45,6 +47,7 @@ function main() {
     hideModelInputs();
     mm1Form.classList.remove('ocultar');
     updateAnswers(mm1)
+    hideError();
 }
 
 function prepareMM1Handler() {
@@ -57,14 +60,24 @@ function prepareMM1Handler() {
     const mUnit = document.querySelector('#mm1-form .m-unit');
     const nVal = document.querySelector('#mm1-form .n');
     lambdaVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
-        model.lambda = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
+            model.lambda = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     muVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
-        model.mu = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
+            model.mu = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     cw.addEventListener('input', (e) => {
         model.cw = Number(e.target.value);
@@ -101,14 +114,24 @@ function prepareMMsHandler() {
     const mUnit = document.querySelector('#mms-form .m-unit');
     const nVal = document.querySelector('#mms-form .n');
     lambdaVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
-        model.setLambda(convertedValue);
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
+            model.setLambda(convertedValue);
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     muVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
-        model.setMu(convertedValue);
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
+            model.setMu(convertedValue);
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     sVal.addEventListener('input', (e) => {
         model.s = Number(e.target.value);
@@ -150,22 +173,42 @@ function prepareMMsKHandler() {
     const mUnit = document.querySelector('#mmsk-form .m-unit');
     const nVal = document.querySelector('#mmsk-form .n');
     lambdaVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
-        model.setLambda(convertedValue);
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
+            model.setLambda(convertedValue);
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     muVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
-        model.setMu(convertedValue);
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
+            model.setMu(convertedValue);
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     sVal.addEventListener('input', (e) => {
-        model.s = Number(e.target.value);
-        updateAnswers(model);
+        try {
+            hideError();
+            model.setS(Number(e.target.value));
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     kVal.addEventListener('input', (e) => {
-        model.k = Number(e.target.value);
-        updateAnswers(model);
+        try {
+            hideError();
+            model.k = Number(e.target.value);
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     cw.addEventListener('input', (e) => {
         model.cw = Number(e.target.value);
@@ -202,14 +245,24 @@ function prepareMG1Handler() {
     const mUnit = document.querySelector('#mg1-form .m-unit');
     const nVal = document.querySelector('#mg1-form .n');
     lambdaVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
-        model.lambda = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
+            model.lambda = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     muVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
-        model.mu = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
+            model.mu = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     sigmaVal.addEventListener('input', (e) => {
         model.sigma = Number(e.target.value);
@@ -249,14 +302,24 @@ function prepareMD1Handler() {
     const mUnit = document.querySelector('#md1-form .m-unit');
     const nVal = document.querySelector('#md1-form .n');
     lambdaVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
-        model.lambda = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
+            model.lambda = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     muVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
-        model.mu = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
+            model.mu = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     cw.addEventListener('input', (e) => {
         model.cw = Number(e.target.value);
@@ -293,14 +356,24 @@ function prepareME1Handler() {
     const mUnit = document.querySelector('#me1-form .m-unit');
     const nVal = document.querySelector('#me1-form .n');
     lambdaVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
-        model.lambda = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(lUnit.value, Number(e.target.value));
+            model.lambda = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     muVal.addEventListener('input', (e) => {
-        const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
-        model.mu = convertedValue;
-        updateAnswers(model);
+        try {
+            hideError();
+            const convertedValue = unitConversion(mUnit.value, Number(e.target.value));
+            model.mu = convertedValue;
+            updateAnswers(model);
+        } catch(error) {
+            showError(error.message);
+        }
     });
     kVal.addEventListener('input', (e) => {
         model.sigma = Number(e.target.value);
@@ -371,6 +444,15 @@ function updateAnswers(queueModel) {
     else
         leText.classList.remove('ocultar');
     leText.innerText = queueModel == mmsk ? `Tasa efectiva de arrivo = ${queueModel.getLambdaE().toFixed(SIGNIFICANT_FIGURES)}`: '';
+}
+
+function hideError() {
+    errorWindow.classList.add('ocultar');
+}
+
+function showError(msg) {
+    errorWindow.innerText = msg;
+    errorWindow.classList.remove('ocultar');
 }
 
 function showModelInputs(e, modelForm) {
