@@ -322,10 +322,14 @@ function prepareMD1Handler() {
         }
     });
     cw.addEventListener('input', (e) => {
+        ee[1] = e.target.value == 83;
+        toggleEasterEgg();
         model.cw = Number(e.target.value);
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
+        ee[2] = e.target.value == 71;
+        toggleEasterEgg();
         model.cs = Number(e.target.value);
         updateAnswers(model);
     });
@@ -340,6 +344,8 @@ function prepareMD1Handler() {
         updateAnswers(model);
     });
     nVal.addEventListener('input', (e) => {
+        ee[0] = e.target.value == 80;
+        toggleEasterEgg();
         model.n = Number(e.target.value);
         updateAnswers(model);
     });
@@ -472,4 +478,10 @@ function unitConversion(selection, value) {
         case "day":
             return value / 24;
     }
+}
+
+const ee = [false, false, false];
+function toggleEasterEgg() {
+    if(ee.every(condition => condition))
+        document.body.classList.add('psg');
 }

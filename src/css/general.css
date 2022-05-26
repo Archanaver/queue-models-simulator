@@ -44,6 +44,8 @@
     --rojo: #dc0714;
     --rojo-medio: #b71515;
     --rojo-obscuro: #911712;
+    --azul-obscuro: #151e2d;
+    --rojo-psg: #ff1541;
     --text-width: 39rem;
 }
 
@@ -71,6 +73,11 @@ body {
     background-position: center 90%;
     background-repeat: no-repeat;
     min-height: 100vh;
+}
+
+body.psg {
+    background-color: #fff;
+    background-image: url(../img/psg-logo.png);
 }
 
 .parrafo, textarea, li {
@@ -109,6 +116,10 @@ h5 {
 
 h6 {
     font-size: 1.2rem;
+}
+
+input {
+    background-color: #fff;
 }
 
 footer {

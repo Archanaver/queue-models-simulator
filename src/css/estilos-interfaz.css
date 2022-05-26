@@ -1,5 +1,9 @@
 .main-container {
-    background-color: var(--rojo)
+    background-color: var(--rojo);
+}
+
+.psg .main-container {
+    background-color: var(--azul-obscuro);
 }
 
 /*****************
@@ -13,12 +17,21 @@
     justify-content: left;
 }
 
+.psg .model-options {
+    background-color: var(--rojo-psg);
+}
+
 .model-options label {
+    color: #fff;
     padding: 0.1rem 0.5rem;
 }
 
 .model-options input:checked + label, .model-options label:hover {
     background-color: var(--rojo);
+}
+
+.psg .model-options input:checked + label, .psg .model-options label:hover {
+    background-color: var(--azul-obscuro);
 }
 
 /*****************
