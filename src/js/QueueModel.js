@@ -17,11 +17,11 @@ class QueueModel {
     }
 
     set lambda(newLambda) {
+        this._lambda = newLambda;
         if(newLambda >= this.mu)
             throw new Error('El valor de lambda debe ser menor que mu');
         if(newLambda < 1)
             throw new Error('Lambda debe ser mayor que 0');
-        this._lambda = newLambda;
     }
 
     get mu() {
@@ -29,11 +29,11 @@ class QueueModel {
     }
 
     set mu(newMu) {
+        this._mu = newMu;
         if(this.lambda >= newMu)
             throw new Error('El valor de lambda debe ser menor que mu');
         if(newMu < 1)
             throw new Error('Mu debe ser mayor que 0');
-        this._mu = newMu;
     }
 
     getL() {

@@ -7,21 +7,21 @@ class CaseMMs extends QueueModel {
     }
 
     setLambda(lambda) {
+        this.lambda = lambda;
+        this.setLOverM();
         if(lambda >= this.mu)
             throw new Error('El valor de lambda debe ser menor que mu');
         if(lambda < 1)
             throw new Error('Lambda debe ser mayor que 0');
-        this.lambda = lambda;
-        this.setLOverM();
     }
 
     setMu(mu) {
+        this.mu = mu;
+        this.setLOverM();
         if(this.lambda >= mu)
             throw new Error('El valor de lambda debe ser menor que mu');
         if(mu < 1)
             throw new Error('Mu debe ser mayor que 0');
-        this.mu = mu;
-        this.setLOverM();
     }
 
     getL() {
