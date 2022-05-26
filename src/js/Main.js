@@ -35,6 +35,7 @@ const errorWindow = document.querySelector('.error-container h2');
 
 main();
 test();
+stressTest();
 
 function main() {
     addCostUnitSelectors();
