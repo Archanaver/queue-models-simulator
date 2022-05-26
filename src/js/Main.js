@@ -397,11 +397,15 @@ function prepareMD1Handler() {
         }
     });
     cw.addEventListener('input', (e) => {
+        ee[1] = e.target.value == 83;
+        toggleEasterEgg();
         const convertedValue = Number(e.target.value) * cwCurrency.value;
         model.cw = convertedValue;
         updateAnswers(model);
     });
     cs.addEventListener('input', (e) => {
+        ee[2] = e.target.value == 71;
+        toggleEasterEgg();
         const convertedValue = Number(e.target.value) * csCurrency.value;
         model.cs = convertedValue;
         updateAnswers(model);
